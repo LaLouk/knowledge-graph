@@ -1,0 +1,132 @@
+import csv
+
+with open('DragonsUpdatedWithInfo.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            print(f'Column names are {", ".join(row)}')
+            line_count += 1
+        else:
+            DragonInstance = row[0]
+            DragonCat = row[1]
+            DragonName = row[2]
+            DragonSum = row[3]
+            DragonParent = row[4]
+            DragonForm = row[5]
+            DragonHome = row[6]
+            DragonSlayer = row[7]
+            DragonSymbol = row[8]
+            DragonPlant = row[9]
+            DragonGodOf = row[10]
+            DragonInfo = row[11]
+
+            testString = row[0]
+            print(testString + f' works in the {row[1]} department, and was born in {row[4]}.')
+            line_count += 1
+
+    print(f'Processed {line_count} lines.')
+    
+    
+    from owlready2 import *
+
+onto_path.append("C:/Users/Aggelos/Desktop/Thesis/forTest")
+onto = get_ontology("DragonsEmpty.owl")
+onto.load()
+
+
+print (list (onto.classes()))
+
+Male = onto.Human("Male")
+Female = onto.Human("Female")
+Heracles = onto.Hero("Heracles")
+Heracles.has_Sex = [Male]
+
+
+DragonInstance = "COLCHIAN DRAGON"
+DragonCat = "DRACONES MYTHICAL"
+DragonName= "THE COLCHIAN DRAGON"
+DragonParent = "Typhoeus and Gaea"
+DragonForm = "Giant Serpent"
+DragonHome = "Colchis"
+DragonSlayer = "Jason"
+
+
+#Class of the Dragon
+if DragonCat == "DRACONES MYTHICAL":
+    Dragon = onto.Dracones_Mythical(DragonInstance)
+
+elif DragonCat == "DRACAENAE":
+    Dragon = onto.Dracaenae(DragonInstance)
+
+elif DragonCat == "DRACONES LEGENDARY":
+    Dragon = onto.Dracones_Legendary(DragonInstance)
+
+elif DragonCat == "CETEA MYTHICAL":
+    Dragon = onto.Cetea_Mythical(DragonInstance)
+
+elif DragonCat == "CETEA LEGENDARY":
+    Dragon = onto.Cetea_Legendary(DragonInstance)
+
+else :
+    Dragon = onto.Chimaera(DragonInstance)
+
+
+#Dragon's Name
+if (DragonName != None):
+    Dragon.has_Name = [DragonName]
+    print (Dragon.has_Name)
+if DragonParent != None:
+    if ("and" in DragonParent):
+        x = DragonParent.split(" and ")
+        Dragon.has_Parent = [onto.Being(x[0])]
+#        Dragon.has_Parent = [onto.Being(x[1])]
+        print (Dragon.has_Parent)
+    else:
+        Dragon.has_Parent = [onto.Being(DragonParent)]
+        print (Dragon.has_Parent)
+
+
+#Dragon's Form
+elif (("lion" in DragonForm) | ("goat" in DragonForm)):
+    Dragon.has_Form = [onto.Hybrid(DragonForm)]
+elif (("fish" in DragonForm) | ("sea" in DragonForm)):
+    Dragon.has_Form = [onto.Sea_Monster(DragonForm)]
+elif ("serpent" in DragonForm):
+    Dragon.has_Form = [onto.Serpent(DragonForm)]
+else:
+    Dragon.has_Form = [onto.Monster(DragonForm)]
+
+
+#Location of the Dragon
+Dragon.lives_In = [onto.Location(DragonHome)]
+
+
+#Slayer of the Dragon
+Slayer = onto.Hero(DragonSlayer)
+Slayer.has_Sex = [Male]
+Slayer.has_Name = [DragonSlayer]
+Dragon.is_Killed_By = [Slayer]
+
+print (Heracles.has_Sex)
+
+
+from SPARQLWrapper import SPARQLWrapper, JSON
+name = "Athena"
+sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+sparql.setQuery("""
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT ?label
+    WHERE { <http://dbpedia.org/resource/""" +name+"""> rdf:type ?label }
+""")
+sparql.setReturnFormat(JSON)
+results = sparql.query()
+#results.print_results()
+result = results.convert()
+#print (str(result))
+if('Goddess' in str(result)):
+  print (True)
+else:
+  print (False)
+
+#http://dbpedia.org/resource/Athena
