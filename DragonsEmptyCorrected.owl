@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/Ontology1569341988.owl#"
+     xml:base="http://www.owl-ontologies.com/Ontology1569341988.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Child -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Child">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Parent"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Form -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Form">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Form"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Given_Birth -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Given_Birth">
+        <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Child"/>
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Parent"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Parent -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Parent">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Sex -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Sex">
+        <rdfs:subPropertyOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Form"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Human"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#is_KIlled_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#is_KIlled_By">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#lives_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#lives_In">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#god_of -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#god_of">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Creatures"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#God"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#God"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Hero"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Human"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#has_Summary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#has_Summary">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Being -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea_Legendary -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea_Legendary">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea_Mythical -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea_Mythical">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Cetea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Chimaera -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Chimaera">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Creatures -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Creatures">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Dracaenae -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracaenae">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones_Legendary -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones_Legendary">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones_Mythical -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones_Mythical">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Dracones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Dragons">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Creatures"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Form -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Form"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Giant -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Giant">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#God -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#God">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Hero -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Hero">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Human -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Human">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Humanoids">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Being"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Hybrid -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Hybrid">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Location -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Location"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Monster -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Monster">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Sea_Monster -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Sea_Monster">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1569341988.owl#Serpent -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1569341988.owl#Serpent">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1569341988.owl#Monster"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+
